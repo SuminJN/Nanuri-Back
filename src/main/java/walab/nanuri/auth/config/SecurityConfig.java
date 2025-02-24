@@ -33,7 +33,7 @@ public class SecurityConfig {
 //    @Value("${custom.host.client}")
 //    private List<String> client;
 
-    @Value("${custom.jwt.secret}")
+    @Value("${jwt.secret_key}")
     private String SECRET_KEY;
 
     @Bean

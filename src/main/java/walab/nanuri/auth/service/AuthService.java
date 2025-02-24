@@ -19,7 +19,7 @@ public class AuthService {
 
   private final UserRepository userRepository;
 
-  @Value("${custom.jwt.secret}")
+  @Value("${jwt.secret_key}")
   private String SECRET_KEY;
 
   public User getLoginUser(String uniqueId) {
@@ -40,6 +40,7 @@ public class AuthService {
                 .build();
     }
     // 최초 로그인이 아닐 경우
+    // FIXME: 왜 항상 토큰을 다시 만들지? refresh 토큰은 어디에?
     else {
       user.get().update(dto);
       return AuthDto.builder()

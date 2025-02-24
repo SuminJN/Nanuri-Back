@@ -10,8 +10,8 @@ import walab.nanuri.auth.controller.request.LoginRequest;
 @Setter
 public class AuthDto {
   private String uniqueId;
-  private String hisnetToken;
-  private String token; //jwt 토큰
+  private String hisnetToken; // 히즈넷에서 받은 토큰
+  private String token; // jwt
   private String name;
   private String email;
   private String department;
